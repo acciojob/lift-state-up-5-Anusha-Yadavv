@@ -12,8 +12,14 @@ function ParentComponent() {
   return (
     <div>
       <h1>Parent Component</h1>
-      <p>User is logged in: {isLoggedIn ? 'Yes' : 'No'}</p>
-      <LoginForm isLoggedIn={isLoggedIn} onLogin={handleLogin} />
+      {isLoggedIn ? (
+        <p>You are logged in!</p>
+      ) : (
+        <div>
+          <p>User is logged in: {isLoggedIn ? 'Yes' : 'No'}</p>
+          <LoginForm isLoggedIn={isLoggedIn} onLogin={handleLogin} />
+        </div>
+      )}
     </div>
   );
 }
